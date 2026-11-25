@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Wuero-Motos</title>
+  <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+
+<body>
+
+  <header>
+    <h1>Wuero<span>-Motos</span></h1>
+    <nav>
+      <a href="{% url 'inicio' %}">Inicio</a>
+      <a href="{% url 'servicios' %}">Servicios</a>
+      <a href="{% url 'nosotros' %}">Nosotros</a>
+      <a href="{% url 'galeria' %}">Galería</a>
+      <a href="{% url 'contacto' %}" class="active">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="page-title">
+    <h2>Contacto</h2>
+    <p>Estamos listos para atenderte</p>
+  </div>
+
+  <section class="seccion contacto-layout">
+
+    <div class="contacto-info">
+      <h2>Encuéntranos</h2>
+
+      <div class="contacto-item">
+        <span class="contacto-icono">📞</span>
+        <div>
+          <h4>Teléfono</h4>
+          <p>831 130 60 63</p>
+        </div>
+      </div>
+
+      <div class="contacto-item">
+        <span class="contacto-icono">🕒</span>
+        <div>
+          <h4>Horario</h4>
+          <p>Lun - Sáb: 9:00 am a 7:00 pm</p>
+          <p>Domingo: Cerrado</p>
+        </div>
+      </div>
+
+      <div class="contacto-item">
+        <span class="contacto-icono">📍</span>
+        <div>
+          <h4>Ubicación</h4>
+          <p>Loma Alta, Tamaulipas</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacto-form">
+      <h2>Envíanos un mensaje</h2>
+
+      <form method="POST" id="formContacto">
+        {% csrf_token %}
+
+        <div class="form-grupo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre"
+                 placeholder="Tu nombre completo" required>
+        </div>
+
+        <div class="form-grupo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono"
+                 placeholder="Tu número de teléfono"
+                 pattern="[0-9\s\-]{7,20}" required>
+        </div>
+
+        <div class="form-grupo">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="Alineación">Alineación</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Reparación">Reparación</option>
+            <option value="Ajuste de rendimiento">Ajuste de rendimiento</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4"
+                    placeholder="Cuéntanos qué necesita tu moto..."
+                    required></textarea>
+        </div>
+
+        {% if exito %}
+          <p style="color:#00cc44; font-weight:bold; margin-bottom:1rem;">
+            {{ exito }}
+          </p>
+
+          <script>
+            const datosMensaje = {
+              nombre: "{{ datos_whatsapp.nombre|escapejs }}",
+              telefono: "{{ datos_whatsapp.telefono|escapejs }}",
+              servicio: "{{ datos_whatsapp.servicio|escapejs }}",
+              mensaje: "{{ datos_whatsapp.mensaje|escapejs }}"
+            };
+
+            const texto =
+              "Nuevo mensaje - Wuero-Motos\n\n" +
+              "Nombre: " + datosMensaje.nombre + "\n" +
+              "Teléfono: " + datosMensaje.telefono + "\n" +
+              "Servicio: " + datosMensaje.servicio + "\n" +
+              "Mensaje: " + datosMensaje.mensaje;
+
+            window.location.href =
+              "https://wa.me/528311306063?text=" +
+              encodeURIComponent(texto);
+          </script>
+        {% endif %}
+
+        <button type="submit" class="btn-enviar">
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Wuero-Motos | Taller &amp; Performance</p>
+  </footer>
+
+</body>
+</html>
