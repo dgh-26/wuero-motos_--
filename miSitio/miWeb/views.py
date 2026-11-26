@@ -1,27 +1,21 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 from .models import MensajeContacto
 
 
 def inicio(request):
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'index.html')
 
 
 def galeria(request):
-    template = loader.get_template('galeria.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'galeria.html')
 
 
 def nosotros(request):
-    template = loader.get_template('nosotros.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'nosotros.html')
 
 
 def servicios(request):
-    template = loader.get_template('servicios.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'servicios.html')
 
 
 def contacto(request):
@@ -54,3 +48,4 @@ def contacto(request):
         })
 
     return render(request, 'contacto.html')
+    
