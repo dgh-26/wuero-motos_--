@@ -14,17 +14,15 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 # Dominio de Render
 RENDER_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
-if RENDER_HOSTNAME:
+if RENDER_HOSTNAME and RENDER_HOSTNAME not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append(RENDER_HOSTNAME)
 
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1']
 
 if RENDER_HOSTNAME:
-    CSRF_TRUSTED_ORIGINS.append(
-        f'https://{RENDER_HOSTNAME}'
-    )
+    CSRF_TRUSTED_ORIGINS.append(f'https://{RENDER_HOSTNAME}')
 
 # Aplicaciones
 INSTALLED_APPS = [
@@ -108,7 +106,7 @@ STORAGES = {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
     },
     'staticfiles': {
-        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
     },
 }
 
