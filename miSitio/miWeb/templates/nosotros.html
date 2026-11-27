@@ -6,8 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros - Wuero-Motos</title>
-   <link rel="stylesheet" href="{% static 'estilos.css' %}">
-
+  <link rel="stylesheet" href="{% static 'estilos.css' %}">
 </head>
 
 <body>
@@ -16,12 +15,12 @@
   <header>
     <h1>Wuero<span>-Motos</span></h1>
     <nav>
-    <a href="{% url 'inicio' %}" class="active">Inicio</a>
-    <a href="{% url 'servicios' %}">Servicios</a>
-    <a href="{% url 'nosotros' %}">Nosotros</a>
-    <a href="{% url 'galeria' %}">Galería</a>
-    <a href="{% url 'contacto' %}">Contacto</a>
-</nav>
+      <a href="{% url 'inicio' %}">Inicio</a>
+      <a href="{% url 'servicios' %}">Servicios</a>
+      <a href="{% url 'nosotros' %}" class="active">Nosotros</a>
+      <a href="{% url 'galeria' %}">Galería</a>
+      <a href="{% url 'contacto' %}">Contacto</a>
+    </nav>
   </header>
 
   <!-- TÍTULO DE PÁGINA -->
@@ -85,7 +84,7 @@
   <section class="cta">
     <h3>¿Quieres conocernos en persona?</h3>
     <p>Visítanos o contáctanos, con gusto te atendemos</p>
-    <a href="contacto.html" class="btn-hero">Ver Contacto</a>
+    <a href="{% url 'contacto' %}" class="btn-hero">Ver Contacto</a>
   </section>
 
   <!-- FOOTER -->
