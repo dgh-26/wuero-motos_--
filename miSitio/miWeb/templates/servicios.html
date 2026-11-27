@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosotros - Wuero-Motos</title>
+  <title>Servicios - Wuero-Motos</title>
   <link rel="stylesheet" href="{% static 'estilos.css' %}">
 </head>
 
@@ -16,8 +16,8 @@
     <h1>Wuero<span>-Motos</span></h1>
     <nav>
       <a href="{% url 'inicio' %}">Inicio</a>
-      <a href="{% url 'servicios' %}">Servicios</a>
-      <a href="{% url 'nosotros' %}" class="active">Nosotros</a>
+      <a href="{% url 'servicios' %}" class="active">Servicios</a>
+      <a href="{% url 'nosotros' %}">Nosotros</a>
       <a href="{% url 'galeria' %}">Galería</a>
       <a href="{% url 'contacto' %}">Contacto</a>
     </nav>
@@ -25,66 +25,56 @@
 
   <!-- TÍTULO DE PÁGINA -->
   <div class="page-title">
-    <h2>Quiénes Somos</h2>
-    <p>Pasión por las motos desde el primer día</p>
+    <h2>Nuestros Servicios</h2>
+    <p>Todo lo que tu moto necesita, en un solo lugar</p>
   </div>
 
-  <!-- HISTORIA -->
-  <section class="seccion nosotros-hero">
-    <div class="nosotros-texto">
-      <h2>Nuestra Historia</h2>
-      <p>En <strong>Wuero-Motos</strong> somos apasionados por las motos. Nacimos de la necesidad de tener un taller de confianza donde cada moto recibe atención profesional con enfoque racing.</p>
-      <p>Desde el primer día nuestro objetivo es simple: que tu moto salga del taller mejor de como entró. Trabajamos con honestidad, precisión y mucho amor por las dos ruedas.</p>
-      <p><strong>!!!!!!!!SI SE CHINGA AQUI LA ARREGLAMOS¡¡¡¡¡¡¡¡</strong></p>
+  <!-- TARJETAS DE SERVICIOS -->
+  <section class="seccion servicios-grid">
+
+    <div class="card-servicio">
+      <div class="card-icono">🔥</div>
+      <h3>Alineación</h3>
+      <p>Ajuste preciso de dirección y ruedas para un manejo estable y seguro en cualquier terreno.</p>
     </div>
-    <div class="nosotros-stats">
-      <div class="stat">
-        <span class="stat-num">+500</span>
-        <span class="stat-label">Motos atendidas</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Años de experiencia</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Clientes satisfechos</span>
-      </div>
+
+    <div class="card-servicio">
+      <div class="card-icono">🏍️</div>
+      <h3>Mantenimiento</h3>
+      <p>Revisión completa de tu moto: aceite, filtros, frenos, cadena y todos los sistemas vitales.</p>
     </div>
+
+    <div class="card-servicio">
+      <div class="card-icono">⚙️</div>
+      <h3>Reparaciones</h3>
+      <p>Diagnóstico y reparación de fallas mecánicas y eléctricas con repuestos de calidad.</p>
+    </div>
+
+    <div class="card-servicio">
+      <div class="card-icono">🛠️</div>
+      <h3>Ajuste de Rendimiento</h3>
+      <p>Optimización del motor y suspensión para sacar el máximo potencial de tu moto en pista.</p>
+    </div>
+
+    <div class="card-servicio">
+      <div class="card-icono">💨</div>
+      <h3>Escape & Admisión</h3>
+      <p>Instalación y ajuste de sistemas de escape y filtros de alto flujo para mayor potencia.</p>
+    </div>
+
+    <div class="card-servicio">
+      <div class="card-icono">🔩</div>
+      <h3>Instalación de Accesorios</h3>
+      <p>Montaje profesional de accesorios, protecciones, espejos, luces y más en tu moto.</p>
+    </div>
+
   </section>
 
-  <!-- VALORES -->
-  <section class="seccion">
-    <h2>Nuestros Valores</h2>
-    <div class="valores-grid">
-      <div class="valor-card">
-        <div class="card-icono">🏆</div>
-        <h3>Calidad</h3>
-        <p>Usamos refacciones originales y herramienta profesional para garantizar cada trabajo.</p>
-      </div>
-      <div class="valor-card">
-        <div class="card-icono">🤝</div>
-        <h3>Confianza</h3>
-        <p>Tu moto está en buenas manos. Trabajamos con honestidad y transparencia siempre.</p>
-      </div>
-      <div class="valor-card">
-        <div class="card-icono">⚡</div>
-        <h3>Rapidez</h3>
-        <p>Entendemos que necesitas tu moto. Trabajamos eficientemente sin sacrificar calidad.</p>
-      </div>
-      <div class="valor-card">
-        <div class="card-icono">🔥</div>
-        <h3>Pasión</h3>
-        <p>Somos moteros. Sabemos lo que sientes cuando tu moto no está al 100%.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
+  <!-- LLAMADO A ACCIÓN -->
   <section class="cta">
-    <h3>¿Quieres conocernos en persona?</h3>
-    <p>Visítanos o contáctanos, con gusto te atendemos</p>
-    <a href="{% url 'contacto' %}" class="btn-hero">Ver Contacto</a>
+    <h3>¿Listo para llevar tu moto al siguiente nivel?</h3>
+    <p>Contáctanos y solicita tu cotización sin compromiso</p>
+    <a href="{% url 'contacto' %}" class="btn-hero">Contáctanos</a>
   </section>
 
   <!-- FOOTER -->
