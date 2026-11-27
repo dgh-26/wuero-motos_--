@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios - Wuero-Motos</title>
   <link rel="stylesheet" href="{% static 'estilos.css' %}">
-
 </head>
 
 <body>
@@ -16,12 +15,12 @@
   <header>
     <h1>Wuero<span>-Motos</span></h1>
     <nav>
-    <a href="{% url 'inicio' %}" class="active">Inicio</a>
-    <a href="{% url 'servicios' %}">Servicios</a>
-    <a href="{% url 'nosotros' %}">Nosotros</a>
-    <a href="{% url 'galeria' %}">Galería</a>
-    <a href="{% url 'contacto' %}">Contacto</a>
-</nav>
+      <a href="{% url 'inicio' %}">Inicio</a>
+      <a href="{% url 'servicios' %}" class="active">Servicios</a>
+      <a href="{% url 'nosotros' %}">Nosotros</a>
+      <a href="{% url 'galeria' %}">Galería</a>
+      <a href="{% url 'contacto' %}">Contacto</a>
+    </nav>
   </header>
 
   <!-- TÍTULO DE PÁGINA -->
@@ -75,7 +74,7 @@
   <section class="cta">
     <h3>¿Listo para llevar tu moto al siguiente nivel?</h3>
     <p>Contáctanos y solicita tu cotización sin compromiso</p>
-    <a href="contacto.html" class="btn-hero">Contáctanos</a>
+    <a href="{% url 'contacto' %}" class="btn-hero">Contáctanos</a>
   </section>
 
   <!-- FOOTER -->
