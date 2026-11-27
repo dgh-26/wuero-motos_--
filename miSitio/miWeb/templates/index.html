@@ -1,7 +1,5 @@
 {% load static %}
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wuero-Motos - Taller de Motos</title>
   <link rel="stylesheet" href="{% static 'estilos.css' %}">
- 
 </head>
 
 <body>
@@ -18,19 +15,19 @@
   <header>
     <h1>Wuero<span>-Motos</span></h1>
     <nav>
-    <a href="{% url 'inicio' %}" class="active">Inicio</a>
-    <a href="{% url 'servicios' %}">Servicios</a>
-    <a href="{% url 'nosotros' %}">Nosotros</a>
-    <a href="{% url 'galeria' %}">Galería</a>
-    <a href="{% url 'contacto' %}">Contacto</a>
-</nav>
+      <a href="{% url 'inicio' %}" class="active">Inicio</a>
+      <a href="{% url 'servicios' %}">Servicios</a>
+      <a href="{% url 'nosotros' %}">Nosotros</a>
+      <a href="{% url 'galeria' %}">Galería</a>
+      <a href="{% url 'contacto' %}">Contacto</a>
+    </nav>
   </header>
 
   <!-- BANNER HERO -->
   <div class="banner">
     <h2>Velocidad & Precisión 🏁</h2>
     <p>Tu moto lista para dominar la pista</p>
-    <a href="servicios.html" class="btn-hero">Cotiza Ahora</a>
+    <a href="{% url 'servicios' %}" class="btn-hero">Cotiza Ahora</a>
   </div>
 
   <!-- FOOTER -->
@@ -40,4 +37,3 @@
 
 </body>
 </html>
-
