@@ -69,9 +69,38 @@ nav a {
   transition: color 0.2s, border-color 0.2s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: var(--rojo);
   border-bottom-color: var(--rojo);
+}
+
+/* ================================
+   BOTÓN PRINCIPAL (.btn-hero)
+================================ */
+.btn-hero {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.8rem;
+  border: 2px solid var(--rojo);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-hero:hover,
+.btn-hero:visited {
+  color: var(--blanco);
+}
+
+.btn-hero:hover {
+  background-color: transparent;
+  color: var(--rojo);
 }
 
 /* ================================
@@ -121,25 +150,6 @@ nav a:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
-}
-
-.banner .btn-hero {
-  display: inline-block;
-  text-decoration: none;
-  background-color: var(--rojo);
-  color: var(--blanco);
-  font-size: 0.95rem;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.9rem 2.8rem;
-  border: 2px solid var(--rojo);
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.banner .btn-hero:hover {
-  background-color: transparent;
-  color: var(--rojo);
 }
 
 /* ================================
